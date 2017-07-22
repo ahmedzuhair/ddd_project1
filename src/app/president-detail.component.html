@@ -1,0 +1,27 @@
+<div *ngIf="president">
+  <h2>{{president.name}} details!</h2>
+  <div>
+    <label>ID: </label>{{president.id}}</div>
+  <div>
+    <label>Name: </label>
+    <input [(ngModel)]="president.name" placeholder="name" />
+  
+  </div>
+
+
+  <div class = "description">
+     <h3>Description</h3> 
+    <p>{{president.desc}}</p> 
+  </div>
+
+
+    <div class = "Picture">
+     <h3>Picture</h3> 
+    <img src="{{president.picture}}" width="300" height="400"> 
+  </div>
+
+
+
+  <button (click)="goBack()">Back</button>
+  <button (click)="save()">Save</button>
+</div>

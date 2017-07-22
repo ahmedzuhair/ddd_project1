@@ -1,0 +1,23 @@
+<h3>Top Presidents</h3>
+
+
+
+<div class="container">
+<div class="card-group">
+   
+  <a *ngFor="let president of presidents" [routerLink]="['/detail', president.id]" class="col-md-4 col-sm-8">
+    <div class="card">
+      <img class="card-img-top " src="{{president.picture}}" alt="Card image cap" width="329" height="350">
+    <div class="card-block">
+      
+      <p class="card-title text-muted">{{president.name}}</p>
+
+    </div>
+    </div>
+  </a>
+  
+</div>
+</div>
+<president-search></president-search>
+
+

@@ -1,0 +1,10 @@
+<div id="search-component">
+  <h4>President Search</h4>
+  <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+  <div>
+    <div *ngFor="let president of presidents | async"
+         (click)="gotoDetail(president)" class="search-result" >
+      {{president.name}}
+    </div>
+  </div>
+</div>

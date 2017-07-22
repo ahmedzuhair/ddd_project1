@@ -1,0 +1,33 @@
+<h2>My Presidents</h2>
+
+
+
+  <label>President name:</label> <input #presidentName />
+  <button (click)="add(presidentName.value); presidentName.value=''">
+    Add
+  </button>
+<div class = "row">
+
+<div class = "col-md-4">
+
+<ul class="list-group">
+  <li class="list-group-item justify-content-between" *ngFor="let president of presidents" (click)="onSelect(president)"
+      [class.selected]="president === selectedPresident">
+    <span class="badge badge-default badge-pil">{{president.id}}</span>
+    <span>{{president.name}}</span>
+    <button class="delete"
+      (click)="delete(president); $event.stopPropagation()">x</button>
+  </li>
+</ul>
+</div>
+
+<div *ngIf="selectedPresident">
+  <h2>
+    {{selectedPresident.name | uppercase}} is selected
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+
+  </div>
+
+
+</div>
